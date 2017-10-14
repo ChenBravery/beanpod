@@ -15,7 +15,7 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>chen.kline.bss</groupId>
+				<groupId>org.beanpod</groupId>
 				<artifactId>spring-all-bss-deps</artifactId>
 				<version>0.0.1.RELEASE</version>
 				<type>pom</type>

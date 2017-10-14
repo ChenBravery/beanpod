@@ -26,7 +26,7 @@
 		<dependencies>
 
 			<dependency>
-				<groupId>org.beanpod.mservice</groupId>
+				<groupId>org.beanpod</groupId>
 				<artifactId>beanpod-depends</artifactId>
 				<version>${project.parent.version}</version>
 				<type>pom</type>
