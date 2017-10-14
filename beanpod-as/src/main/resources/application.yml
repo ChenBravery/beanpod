@@ -1,0 +1,98 @@
+   
+spring:
+    datasource:
+        #name: auth
+        url: jdbc:mysql://192.168.1.32:3306/auth?characterEncoding=utf8&useSSL=false
+        username: root
+        password: 123456
+        druid: 
+            url: jdbc:mysql://192.168.1.32:3306/auth?characterEncoding=utf8&useSSL=false
+            username: root
+            password: 123456
+            initial-size: 2
+            max-active: 50
+            min-idle: 5
+            max-wait: 60000 # 60s
+            pool-prepared-statements: true 
+            max-open-prepared-statements: 20
+            validation-query: SELECT 'x' FROM DUAL
+            validation-query-timeout: 60 # 60s
+            test-on-borrow: false
+            test-on-return: false
+            test-while-idle: true
+            time-between-eviction-runs-millis: 60000
+            min-evictable-idle-time-millis: 60000
+            max-evictable-idle-time-millis: 60000
+            filters: stat,wall
+            # WebStatFilter配置，说明请参考Druid Wiki，配置_配置WebStatFilter
+            web-stat-filter:
+                enabled: true
+                # url-pattern: 
+                # exclusions:
+                # session-stat-enable: true
+                # session-stat-max-count: 
+                # principal-session-name: 
+                # principal-cookie-name:
+                # profile-enable: 
+            # StatViewServlet配置，说明请参考Druid Wiki，配置_StatViewServlet配置
+            stat-view-servlet:
+                enabled: true
+                # url-pattern: 
+                reset-enable: false
+                login-username: druid
+                login-password: druid
+                #allow:
+                #deny:
+            # Spring监控配置，说明请参考Druid Github Wiki，配置_Druid和Spring关联监控配置
+            #aop-patterns: # Spring监控AOP切入点，如x.y.z.service.*,配置多个英文逗号分隔
+            # 如果spring.datasource.druid.aop-patterns要代理的类没有定义interface请设置spring.aop.proxy-target-class=true
+            
+            
+    redis:  
+        cluster:  
+            nodes:  
+                - 127.0.0.1:6390  
+                - 127.0.0.1:6391  
+                - 127.0.0.1:6392  
+                - 192.168.3.115:6390  
+                - 192.168.3.115:6391  
+                - 192.168.3.115:6392  
+
+#mybatis:
+#    type-aliases-package: org.beanpod.mservice.dao.entity
+#    mapper-locations: classpath:com/hh/jh/ww/drainage/dao/mapper/*.xml
+    
+jedis :  
+  pool :  
+    host : 192.168.3.7
+    port : 6379  
+    config :  
+      maxTotal: 100  
+      maxIdle: 10  
+      maxWaitMillis : 100000  
+      
+ribbon:
+    eureka:
+        enabled: false # 禁用负载均衡
+
+# example-provider 服务提供者地址列表        
+example-provider:
+    ribbon:
+        listOfServers: 192.168.3.7:7201, 192.168.3.7:7202
+        
+feign:
+    exampleProvider:
+        url: http://192.168.3.7:7201
+            
+logging:
+    level:
+        org.beanpod.mservice: TRACE
+
+testCount: 23
+
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+    

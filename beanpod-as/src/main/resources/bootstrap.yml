@@ -1,0 +1,31 @@
+server:
+    port: 28080
+    
+eureka:
+    client:
+        registerWithEureka: true # false 表示不连接注册中心
+        fetchRegistry: true # false 表示不连接注册中心   
+        serviceUrl:
+            #defaultZone: http://192.168.1.32:9090/eureka/,http://192.168.1.32:9091/eureka/,http://192.168.1.32:9092/eureka/
+            defaultZone: http://192.168.1.32:9090/eureka/
+
+spring:
+    application:
+        name: beanpod-as
+    cloud:
+        config:
+            enable: false
+            name: beanpod-as
+            profile: default
+            label: master
+            failFast: false # false 表示连接配置中心失败时也继续以本地配置启动业务服务器
+            discovery:
+                enabled: false
+                serviceId: config-server
+                
+    rabbitmq:
+        host: 192.168.1.32 # localhost
+        port: 5672
+        username: admin
+        password: admin
+
