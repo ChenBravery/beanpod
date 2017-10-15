@@ -109,5 +109,6 @@
 		<module>beanpod-depends</module>
 		<module>beanpod-as</module>
 		<module>beanpod-common</module>
+		<module>beanpod-user</module>
 	</modules>
 </project>
