@@ -1,5 +1,5 @@
 server:
-    port: 28080
+    port: 28082
     
 eureka:
     client:
@@ -7,16 +7,16 @@ eureka:
         fetchRegistry: true # false 表示不连接注册中心   
         serviceUrl:
             #defaultZone: http://192.168.1.32:9090/eureka/,http://192.168.1.32:9091/eureka/,http://192.168.1.32:9092/eureka/
-            #defaultZone: http://192.168.1.32:9090/eureka/
-            defaultZone: http://localhost:9090/eureka/
+            defaultZone: http://192.168.1.32:9090/eureka/
+            #defaultZone: http://localhost:9090/eureka/
 
 spring:
     application:
-        name: beanpod-as
+        name: beanpod-user
     cloud:
         config:
             enable: false
-            name: beanpod-as
+            name: beanpod-user
             profile: default
             label: master
             failFast: false # false 表示连接配置中心失败时也继续以本地配置启动业务服务器
@@ -25,8 +25,8 @@ spring:
                 serviceId: config-server
                 
     rabbitmq:
-        host: 192.168.92.141 # 192.168.1.32 # localhost
-        port: 5673
+        host: 192.168.1.32 # 192.168.92.141 # localhost
+        port: 5672
         username: admin
         password: admin
 

@@ -1,6 +1,6 @@
-package org.beanpod.mservice.msg;
+package org.beanpod.common.msg;
 
-import org.beanpod.mservice.msg.PageParam;
+import org.beanpod.common.msg.PageParam;
 
 import lombok.Data;
 

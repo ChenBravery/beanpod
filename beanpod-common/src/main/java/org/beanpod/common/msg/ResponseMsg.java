@@ -1,4 +1,4 @@
-package org.beanpod.mservice.msg;
+package org.beanpod.common.msg;
 
 import lombok.Data;
 

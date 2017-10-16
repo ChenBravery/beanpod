@@ -8,7 +8,7 @@ import org.beanpod.auth.msg.user.UserListReq;
 import org.beanpod.auth.msg.user.UserListResp;
 import org.beanpod.auth.msg.user.UserResp;
 import org.beanpod.auth.service.IUserService;
-import org.beanpod.mservice.msg.PageParam;
+import org.beanpod.common.msg.PageParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
